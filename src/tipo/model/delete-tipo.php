@@ -5,7 +5,7 @@
 
     $ID = $_REQUEST['ID'];
 
-    $sql = "DELETE FROM TIPO WHERE ID = $ID";
+    $sql = "DELETE * FROM TIPO WHERE ID = $ID";
 
     $resultado = $pdo->query($sql);
 
@@ -23,4 +23,4 @@
 
 
     //Retorna o objeto json para o DataTable
-    echo json_encode($json_data);
+    echo json_encode($dados);
