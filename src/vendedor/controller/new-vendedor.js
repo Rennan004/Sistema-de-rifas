@@ -5,19 +5,19 @@ $(document).ready(function() {
         $('.modal-title').empty()
 
 
-        $('.modal-title').append('Adicionar novo comprador')
+        $('.modal-title').append('Adicionar novo vendedor')
 
-        $('.modal-body').load('src/comprador/view/form-comprador.html')
+        $('.modal-body').load('src/vendedor/view/form-vendedor.html')
 
         $('.btn-save').show()
 
         $('.btn-save').attr('data-operation', 'insert')
 
-        $('#modal-comprador').modal('show')
+        $('#modal-vendedor').modal('show')
     })
 
     $('.close, #close').click(function(e) {
         e.preventDefault()
-        $('#modal-comprador').modal('hide')
+        $('#modal-vendedor').modal('hide')
     })
 })
