@@ -2,13 +2,13 @@ $(document).ready(function() {
 
     $('.close, #close').click(function(e) {
         e.preventDefault()
-        $('#modal-comprador').modal('hide')
+        $('#modal-premio').modal('hide')
     })
 
     $('.btn-save').click(function(e) {
         e.preventDefault()
 
-        let dados = $('#form-comprador').serialize()
+        let dados = $('#form-premio').serialize()
 
         dados += `&operacao=${$('.btn-save').attr('data-operation')}`
 
@@ -17,7 +17,7 @@ $(document).ready(function() {
             dataType: 'json',
             assync: true,
             data: dados,
-            url: 'src/comprador/model/save-comprador.php',
+            url: 'src/premio/model/save-premio.php',
             success: function(dados) {
                 Swal.fire({
                     title: 'Sistema de rifas',
@@ -26,8 +26,8 @@ $(document).ready(function() {
                     confirmButtonText: 'OK'
                 })
 
-                $('#modal-comprador').modal('hide')
-                $('#table-comprador').DataTable().ajax.reload()
+                $('#modal-premio').modal('hide')
+                $('#table-premio').DataTable().ajax.reload()
             }
         })
     })

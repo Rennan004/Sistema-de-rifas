@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('#table-comprador').on('click', 'button.btn-view', function(e) {
+    $('#table-premio').on('click', 'button.btn-edit', function(e) {
 
         e.preventDefault()
 
@@ -18,22 +18,22 @@ $(document).ready(function() {
             dataType: 'json',
             assync: true,
             data: ID,
-            url: 'src/comprador/model/view-comprador.php',
+            url: 'src/premio/model/view-premio.php',
             success: function(dado) {
                 if (dado.tipo == "success") {
-                    $('.modal-body').load('src/comprador/view/form-comprador.html', function() {
+                    $('.modal-body').load('src/premio/view/form-premio.html', function() {
                         $('#NOME').val(dado.dados.NOME)
                         $('#CELULAR').val(dado.dados.CELULAR)
-                        $('#NOME').attr('readonly', 'true')
-                        $('#CELULAR').attr('readonly', 'true')
+                        $('#ID').val(dado.dados.ID)
                     })
-                    $('.btn-save').hide()
-                    $('#modal-comprador').modal('show')
+                    $('.btn-save').removeAttr('data-operation', 'insert')
+                    $('.btn-save').show()
+                    $('#modal-premio').modal('show')
                 } else {
                     Swal.fire({ // Inicialização do SweetAlert
-                        title: 'e-Rifa', // Título da janela SweetAler
+                        title: 'Sistema de Rifas', // Título da janela SweetAlert
                         text: dado.mensagem, // Mensagem retornada do microserviço
-                        type: dado.tipo, // comprador de retorno [success, info ou error]
+                        type: dado.tipo, // premio de retorno [success, info ou error]
                         confirmButtonText: 'OK'
                     })
                 }

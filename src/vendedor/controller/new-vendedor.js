@@ -7,7 +7,20 @@ $(document).ready(function() {
 
         $('.modal-title').append('Adicionar novo vendedor')
 
-        $('.modal-body').load('src/vendedor/view/form-vendedor.html')
+        $('.modal-body').load('src/vendedor/view/form-vendedor.html', function() {
+            $.ajax({
+                dataType: 'json',
+                type: 'POST',
+                assync: true,
+                url: 'src/tipo/model/all-tipo.php',
+                success: function(dados) {
+                    for (const result of dados) {
+                        $('#TIPO_ID').append(`
+                        <option value="${result.ID}">${result.NOME}</option>`)
+                    }
+                }
+            })
+        })
 
         $('.btn-save').show()
 
