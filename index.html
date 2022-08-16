@@ -13,7 +13,7 @@
 </head>
 
 <body class="text-center">
-    <form class="form-signin">
+    <form class="form-signin" id="form-login">
         <img class="mb-4" src="img/tickets.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Faça login</h1>
         <label class="sr-only">Usuario</label>
@@ -25,7 +25,7 @@
             <input type="checkbox" value="remember-me"> Lembrar de mim
           </label>
         </div>
-        <button class="btn btn-lg btn-warning btn-block" type="submit"><i class="fa-solid fa-right-from-bracket"></i> Login</button>
+        <button class="btn btn-lg btn-warning btn-block btn-login" type="submit"><i class="fa-solid fa-right-from-bracket"></i> Login</button>
     </form>
 
 
@@ -35,6 +35,8 @@
 <script src="js/jquery-3.6.0.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="libs/FontAwesome/js/all.js"></script>
+<script src="src/vendedor/controller/login-vendedor.js"></script>
+
 </body>
 
 </html>
