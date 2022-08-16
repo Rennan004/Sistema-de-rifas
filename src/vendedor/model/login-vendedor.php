@@ -1,7 +1,8 @@
 <?php 
 
     include('../../conexao/conn.php');
-
+    $SENHA = $_REQUEST['SENHA'];
+    $LOGIN = $_REQUEST['LOGIN'];
     $sql = $pdo->query("SELECT *, count(ID) as achou FROM VENDEDOR WHERE LOGIN = '".$_REQUEST['LOGIN']."' AND SENHA = '".md5($_REQUEST['SENHA'])."'");
 
     while($resultado = $sql->fetch(PDO::FETCH_ASSOC)){
@@ -12,6 +13,8 @@
             $dados = array{
                 'tipo' => 'success',
                 'mensagem' => 'Login correto.'
+                'TYPE' => $resultado['TIPO_ID'],
+            'ID' => $resultado['ID']
             };
         }else{
             $dados = array{
