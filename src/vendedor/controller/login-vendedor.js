@@ -1,8 +1,9 @@
 $(document).ready(function() {
-    $('.btn-login').click(function(e) {
+    $('#btn-login').click(function(e) {
         e.preventDefault()
 
         let dados = $('#form-login').serialize()
+
         $.ajax({
             type: 'POST',
             dataType: 'json',
@@ -13,9 +14,8 @@ $(document).ready(function() {
                 if (dados.tipo === 'success') {
                     $(location).attr('href', 'sistema.html');
                 } else {
-                    console.log("adusda")
                     Swal.fire({
-                        title: 'Gerenciamento Rifas',
+                        title: 'E-RIFAS',
                         text: dados.mensagem,
                         icon: dados.tipo,
                         confirmButtonText: 'OK'
