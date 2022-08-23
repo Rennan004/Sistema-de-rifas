@@ -1,21 +1,17 @@
-<?php
+<?php 
 
-    session_start(); //Inicio a sessão PHP
+    session_start();
 
-    // Verifico se existe sessão aberta com as seguintes informações --- ID e NOME
-    if(!isset($_SESSION['ID']) && !isset($_SESSION['NOME'])){
+    if(!isset($_SESSION['TIPO']) && !isset($_SESSION['NOME'])){
         $dados = array(
             'tipo' => 'error',
-            'mensagem' => 'Você não está autenticado para utilizar o sistema, por favor realize o login.'
+            'mensagem' => 'Você não está autenticado para utilizar o sistema, realize o login.'
         );
-    }else{
+    } else {
         $dados = array(
             'tipo' => 'success',
             'mensagem' => utf8_encode($_SESSION['NOME']),
-            'tipo_usuario' => $_SESSION['TIPO'],
-            'ID' =>  $_SESSION['ID'],
-            'TIPO_USUARIO' => $_SESSION['TIPO']
-
+            'tipo_usuario' => $_SESSION['TIPO']
         );
     }
 

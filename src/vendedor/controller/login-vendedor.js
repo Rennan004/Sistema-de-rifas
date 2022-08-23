@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#btn-login').click(function(e) {
+    $('.btn-login').click(function(e) {
         e.preventDefault()
 
         let dados = $('#form-login').serialize()
