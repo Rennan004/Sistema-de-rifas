@@ -9,7 +9,7 @@ $(document).ready(function() {
         $('.modal-title').empty()
         $('.modal-body').empty()
 
-        $('.modal-title').append('Visualização de registro')
+        $('.modal-title').append('Editando de registro')
 
         let ID = `ID=${$(this).attr('id')}`
 
