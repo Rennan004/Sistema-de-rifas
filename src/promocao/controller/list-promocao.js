@@ -14,7 +14,11 @@ $(document).ready(function() {
                 "className": 'text-center'
             },
             {
-                "data": 'NOME',
+                "data": 'TITULO',
+                "className": 'text-center'
+            },
+            {
+                "data": 'DATA_SORTEIO',
                 "className": 'text-center'
             },
             {
