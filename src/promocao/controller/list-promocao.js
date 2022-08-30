@@ -18,10 +18,6 @@ $(document).ready(function() {
                 "className": 'text-center'
             },
             {
-                "data": 'DATA_SORTEIO',
-                "className": 'text-center'
-            },
-            {
                 "data": 'ID',
                 "orderable": false,
                 "searchable": false,
